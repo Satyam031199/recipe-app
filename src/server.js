@@ -3,9 +3,12 @@ import { config } from "./config/config.js";
 import { favouritesTable } from "./db/schema.js";
 import { db } from "./index.js";
 import { desc, eq } from "drizzle-orm";
+import { cronJob } from "./config/cron.js";
 
 const PORT = config.port;
 const app = express();
+
+if(config.nodeEnv === "production") cronJob.start();
 
 app.use(express.json());
 
