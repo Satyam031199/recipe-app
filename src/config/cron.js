@@ -1,8 +1,8 @@
 import cron from "cron";
 import https from "https";
-import { config } from "./config";
+import { config } from "./config.js";
 
-export const cronJob = new cron.CronJob("*/14 * * * *", () => {
+export const cronJob = new cron.CronJob("* * * * *", () => {
     https.get(`${config.apiUrl}/api/health`, (res) => {
         res.statusCode === 200 ? 
             console.log("Cron job executed successfully") : 
