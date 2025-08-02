@@ -2,7 +2,7 @@ import express from "express";
 import { config } from "./config/config.js";
 import { favouritesTable } from "./db/schema.js";
 import { db } from "./index.js";
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 
 const PORT = config.port;
 const app = express();
