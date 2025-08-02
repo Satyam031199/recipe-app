@@ -5,4 +5,5 @@ export const config = {
   port: process.env.PORT || 5001,
   databaseUrl: process.env.DATABASE_URL,
   nodeEnv: process.env.NODE_ENV || "development",
+  apiUrl: process.env.API_URL,
 };
